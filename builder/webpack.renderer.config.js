@@ -43,8 +43,9 @@ module.exports = {
                 use:[{
                     loader: 'url-loader',
                     options: {
+                        esModule: false,
                         limit: 1024,
-                        name: '[name]-bundle.[ext]'
+                        name: './images/[name].[ext]'
                     }
                 }]
             }

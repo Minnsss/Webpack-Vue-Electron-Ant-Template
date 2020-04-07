@@ -1,0 +1,93 @@
+{
+  "name": "builder-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./scripts/dev.js",
+    "build": "node ./scripts/build.js",
+    "electron:start": "electron ./src/main/main.js"
+  },
+  "author": "szm",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "archiver": "^3.1.1",
+    "autoprefixer": "^9.7.5",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-import": "^1.13.0",
+    "css-loader": "^3.4.2",
+    "electron": "^8.1.1",
+    "electron-builder": "^22.4.1",
+    "electron-chromedriver": "^8.0.0",
+    "electron-icon-builder": "^1.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "style-loader": "^1.1.3",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.1",
+    "vue-router": "^3.1.6",
+    "vue-template-compiler": "^2.6.11",
+    "vuex": "^3.1.3",
+    "webpack": "^4.42.0",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-hot-middleware": "^2.25.0"
+  },
+  "build": {
+    "asar": true,
+    "productName": "Electron+Vue+Webpack+Ant模板",
+    "appId": "com.electron.template",
+    "copyright": "Copyright © template",
+    "directories": {
+      "output": "pack"
+    },
+    "files": [
+      "app/**"
+    ],
+    "mac": {
+      "identity": "com.electron.templat",
+      "target": [
+        "dmg"
+      ],
+      "artifactName": "${productName}.${ext}",
+      "icon": "pubilc/favicon/favicon.icns"
+    },
+    "dmg": {
+      "title": "${productName}",
+      "artifactName": "${productName}.${ext}",
+      "icon": "pubilc/favicon/favicon.icns"
+    },
+    "win": {
+      "legalTrademarks": "Copyright © template",
+      "publisherName": "electron",
+      "requestedExecutionLevel": "highestAvailable",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ],
+      "artifactName": "${productName}.${ext}",
+      "icon": "pubilc/favicon/favicon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": true,
+      "allowElevation": true,
+      "artifactName": "${productName}-安装包-V${version}.${ext}",
+      "runAfterFinish": true,
+      "shortcutName": "Electron+Vue+Webpack+Ant-template"
+    }
+  },
+  "dependencies": {
+    "ant-design-vue": "^1.4.12"
+  }
+}

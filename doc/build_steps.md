@@ -11,32 +11,35 @@ date: 2020-04-05
 工程目录结构如下 
 ``` 
 |——app  // webpack编译整个项目后的代码，包括主进程和渲染进程
-|——builder  // webpack配置文件 
-|   |——webpack.main.config.js   // webpack主进程配置文件
-|   |——webpack.renderer.config.js   // webpack渲染进程配置文件
-|   |——devServerConfig.js   // webpack dev server配置文件
-|——config   // 其他环境配置文件
-|   |——compress.js  //
-|   |——version.js   //
+|——builder  // webpack配置 
+|   |——webpack.main.config.js
+|   |——webpack.renderer.config.js
+|   |——devServerConfig.js 
+|——config   // 其他配置
+|   |——compress.js
+|   |——version.js
 |——doc  // 开发文档  
 |——node-modules  
 |——pack // electron-builder后的安装包
-|——public   // 静态资源，图标等  
+|——public 
 |——src  // 工程源代码   
-|   |——main // 主进程
+|   |——main
 |   |   |——index.js // electron的窗口文件
 |   |   |——main.js  //
-|   |——renderder    // 渲染进程
-|   |   |——views
-|   |   |——components 
+|   |——renderder
+|   |   |——assets
+|   |   |   |——images
+|   |   |   |——plugins
+|   |   |   |   |——ant-components.js    // 配置ant-design-vue动态加载
+|   |   |   |——styles
+|   |   |——components
+|   |   |——utiles
+|   |   |——views 
 |   |   |——index.ejs    // html模板
 |   |   |——index.js
-|   |——assets   // 资源
-|   |   |——plugins  //插件
-|   |   |   |——ant-components.js    // 配置ant-design-vue动态加载
-|——babel.config.js  // babel的配置文件  
-|——postcsss.config.js   // css预加载配置文件
-|——vue.config.js    // vue的配置文件
+|——babel.config.js  
+|——postcsss.config.js
+|——vue.config.js
 |——package.json
 ```
 

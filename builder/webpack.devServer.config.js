@@ -1,6 +1,6 @@
 /**
 * Tip:    devServer的配置
-* Author: haoluo
+* Author: szm
 * Data:   2020-02-25
 * Tips:   使用以下命令启动各环境配置,npm run dev [dev|test|release]
 **/

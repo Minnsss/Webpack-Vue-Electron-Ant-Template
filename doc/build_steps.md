@@ -14,7 +14,7 @@ date: 2020-04-05
 |——builder  // webpack配置 
 |   |——webpack.main.config.js
 |   |——webpack.renderer.config.js
-|   |——devServerConfig.js 
+|   |——webpack.devServer.config.js.js 
 |——config   // 其他配置
 |   |——compress.js
 |   |——version.js
@@ -56,3 +56,8 @@ date: 2020-04-05
 ## 安装ant-design-vue
 
 ## 执行electron打包
+需要手动下载 
+electron-v8.1.1-win32-ia32.zip
+nsis
+
+

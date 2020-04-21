@@ -4,7 +4,7 @@ module.exports = {
       "@babel/plugin-transform-runtime",
       [
         "import",
-        { libraryName: "ant-design-vue", libraryDirectory: "lib", style: "css" }
+        { libraryName: "ant-design-vue", libraryDirectory: "es", style: true }
       ]
     ]
   };

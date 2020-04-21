@@ -1,7 +1,11 @@
 import Vue from 'vue'
-import index from './views/index.vue'
+// import index from './views/index.vue'
 // import { Button } from 'ant-design-vue'
+
+import App from './App.vue'
 import './assets/plugins/ant-components'
+import './assets/styles/index.less'
+
 //取消 Vue 所有的日志与警告
 Vue.config.silent = true;
 Vue.config.productionTip = false
@@ -10,5 +14,5 @@ Vue.config.productionTip = false
 
 new Vue({
     el: '#app',
-    render: h => h(index)
+    render: h => h(App)
 });

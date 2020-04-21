@@ -1,0 +1,39 @@
+directories:
+  output: pack
+  buildResources: build
+asar: true
+productName: Electron+Vue+Webpack+Ant模板
+appId: com.electron.template
+copyright: Copyright © template
+files:
+  - filter:
+      - app/**
+mac:
+  identity: com.electron.templat
+  target:
+    - dmg
+  artifactName: '${productName}.${ext}'
+  icon: pubilc/favicon/favicon.icns
+dmg:
+  title: '${productName}'
+  artifactName: '${productName}.${ext}'
+  icon: pubilc/favicon/favicon.icns
+win:
+  legalTrademarks: Copyright © template
+  publisherName: electron
+  requestedExecutionLevel: highestAvailable
+  target:
+    - target: nsis
+      arch:
+        - ia32
+  artifactName: '${productName}.${ext}'
+  icon: pubilc/favicon/favicon.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  perMachine: true
+  allowElevation: true
+  artifactName: '${productName}-安装包-V${version}.${ext}'
+  runAfterFinish: true
+  shortcutName: Electron+Vue+Webpack+Ant-template
+electronVersion: 8.1.1

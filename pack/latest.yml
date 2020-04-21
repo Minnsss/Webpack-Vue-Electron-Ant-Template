@@ -1,0 +1,8 @@
+version: 1.0.0
+files:
+  - url: builder-template-setup-1.0.0.exe
+    sha512: eE0D4T6soJwIwGUz9uh1KWueVXJarGna3FgRmu7G6uuQ3sJ+wkzDF0g/ow1ooywQNa/QXdHg/vUxUcj20/JEBQ==
+    size: 56019441
+path: builder-template-setup-1.0.0.exe
+sha512: eE0D4T6soJwIwGUz9uh1KWueVXJarGna3FgRmu7G6uuQ3sJ+wkzDF0g/ow1ooywQNa/QXdHg/vUxUcj20/JEBQ==
+releaseDate: '2020-04-21T02:27:49.021Z'

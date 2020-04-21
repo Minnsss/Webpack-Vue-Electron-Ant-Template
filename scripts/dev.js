@@ -14,7 +14,7 @@ const { spawn } = require('child_process');
 const electron = require('electron');
 const path = require('path');
 const { buildMain } = require('./child/buildMain.js');
-const devServerConfig = require('../builder/devServerConfig.js');
+const devServerConfig = require('../builder/webpack.devServer.config.js');
 
 const url = devServerConfig.url;
 const port = devServerConfig.port;

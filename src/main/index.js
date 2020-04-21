@@ -12,7 +12,7 @@ const process = require("process");
 const url = require("url");
 const path = require("path");
 const cookie = require('cookie');
-const devServerConfig = require('../../builder/devServerConfig.js');
+const devServerConfig = require('../../builder/webpack.devServer.config.js');
 
 const devMode = process.env.NODE_ENV === "development";
 let mainWindow = null;
@@ -38,7 +38,7 @@ function createWindow() {
         show: true,
         center: true,
         simpleFullscreen: true,
-        resizable: process.platform === 'darwin',
+        resizable: process.platform === 'win32',
         movable: true, //可否移动
         minimizable: true, //可否最小化
         maximizable: true, //可否最大化
@@ -46,7 +46,7 @@ function createWindow() {
         skipTaskbar: false, //在任务栏中显示窗口
         acceptFirstMouse: true, //是否允许单击页面来激活窗口
         closable: true,
-        backgroundColor: '#fff',
+        backgroundColor: '#007acd',
         allowRunningInsecureContent: true,//允许一个 https 页面运行 http url 里的资源
         webPreferences: {
             devTools: true, //是否打开调试模式

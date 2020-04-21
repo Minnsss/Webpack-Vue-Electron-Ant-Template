@@ -20,11 +20,11 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.vue$/,
-                exclude: /node_modules/,
-                loader: 'vue-loader'
-            },
+            // {
+            //     test: /\.vue$/,
+            //     exclude: /node_modules/,
+            //     loader: 'vue-loader'
+            // },
             {
                 test: /\.(js|jsx)$/,
                 loader: "babel-loader",
@@ -36,7 +36,19 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                use: ['style-loader', 'css-loader', 'less-loader']
+                use: ['style-loader', 'css-loader',
+                {
+                    loader: 'less-loader',
+                    options: {
+                        modifyVars: {
+                            'primary-color': '#007acd',
+                            'link-color': '#007acd',
+                            'border-radius-base': '4px'
+                        },
+                        javascriptEnabled: true
+                    }
+
+                }]
             },
             {
                 test: /\.(gif|jpg|jpeg|png|svg)$/,
@@ -48,6 +60,20 @@ module.exports = {
                         name: './images/[name].[ext]'
                     }
                 }]
+            },
+            {
+                test: /\.vue$/,
+                use: {
+                  loader: 'vue-loader',
+                  options: {
+                    extractCSS: process.env.NODE_ENV === 'production',
+                    loaders: {
+                      sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax=1',
+                      scss: 'vue-style-loader!css-loader!sass-loader',
+                      less: 'vue-style-loader!css-loader!less-loader'
+                    }
+                  }
+                }
             }
         ]
     },

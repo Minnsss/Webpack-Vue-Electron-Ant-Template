@@ -1,5 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
-let mainWindow = require("./index.js");
+require("./libs/runCheck.js")(); //禁止打开多份
+const shortCut = require("./libs/shortCut.js"); //注册快捷键
+let mainWindow = require("./windows/index.js");
 
 //注册全局变量
 // 页面跟路径配置，优先使用此配置，考虑到小版本更新时，版本之间的切换
@@ -14,6 +16,7 @@ global.windowIds = {
 
 app.on('ready', () => {
      mainWindow.create();
+     shortCut.register('Command+F12');
 });
 
 //启动主窗体
@@ -31,3 +34,18 @@ app.on('window-all-closed', function() {
         if (allwindow.length === 0 ) app.exit(1);
     }, 500);
 });
+
+// 多窗口调用例子
+// ipcMain.on('show-tool-sync', (event, args) =>  {
+//     if(args.type === "uut-tool")
+//     {
+//         UUTWindow.create(); 
+//         // console.log("show-uut-tool")
+//     }
+//     else if(args.type === "run-platform")
+//     {RUNWindow.create();}
+//     else if(args.type === "ts-tool") 
+//     {TSWindow.create();}
+
+//     event.returnValue = null
+// })

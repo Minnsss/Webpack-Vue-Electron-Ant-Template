@@ -31,7 +31,8 @@ module.exports = {
         extensions: ['.js', '.json', '.vue'],
         alias: {
             '@': path.resolve(__dirname, "../src"),
-            '@config': path.resolve(__dirname, "../config")
+            '@config': path.resolve(__dirname, "../config"),
+            '@builder': path.resolve(__dirname, "../builder")
         }
     },
     // module: {

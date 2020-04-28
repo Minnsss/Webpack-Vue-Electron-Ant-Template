@@ -5,21 +5,78 @@
 **/
 const {
     BrowserWindow,
-    dialog
+    dialog,
+    Menu
 } = require("electron");
 const electron = require("electron");
 const process = require("process");
 const url = require("url");
 const path = require("path");
 const cookie = require('cookie');
-const devServerConfig = require('../../builder/webpack.devServer.config.js');
+const devServerConfig = require('@builder/webpack.devServer.config.js');
 
 const devMode = process.env.NODE_ENV === "development";
 let mainWindow = null;
 
 const filter = {
-    urls: ['http://*.kakayang.cn/*']
+    urls: ['http://*.github.com/*']
 };
+
+let template = [
+    {
+      label: '编辑(&E)',
+      accelerator: 'E',
+      submenu:[
+          {   
+              label: '新建',
+              accelerator: 'Ctrl+N',
+              role: 'new a atml workspace'
+          }
+      ]
+    },
+    {
+      label: '*设置(&S)',
+      accelerator: 'S',
+      submenu: [
+          {
+              label: '加载工具',
+              accelerator: 'Ctrl+O',
+              role: 'add tool',
+          },
+      ]
+    },
+    {
+      label: '帮助(&H)',
+      submenu: [
+      //   {
+      //       label: '切换开发人员工具',
+      //       accelerator: 'F12',
+      //       click: function(item, focusedWindow) {
+      //         if (focusedWindow)
+      //           focusedWindow.toggleDevTools();
+      //       }
+      //   },
+      //   { 
+      //       type: 'separator'
+      //   }, 
+        {
+            label: '文档',
+            role: 'doc'
+        },
+        { 
+            type: 'separator'
+        }, 
+        { 
+            label: '关于',
+            role: 'about'
+        },
+        {
+            label: '帮助',
+            role: 'help'                
+        }
+      ]
+    }
+  ]
 
 //创建窗口
 function createWindow() {
@@ -69,6 +126,10 @@ function createWindow() {
         // 其他处理
     }).on('ready-to-show', function () {
         mainWindow.show();
+    }).on('focus', function(){
+        const menu = Menu.buildFromTemplate(template)
+        mainWindow.setMenu(menu); 
+        // mainWindow.webContents.openDevTools({mode:'right'});
     });
 
     try {

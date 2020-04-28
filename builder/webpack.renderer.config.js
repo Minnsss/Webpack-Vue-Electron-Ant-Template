@@ -11,7 +11,7 @@ const devMode = process.env.NODE_ENV === 'development';
 module.exports = {
     mode: devMode ? 'development' : 'production',
     entry: {
-        main: './src/renderer/index.js'
+        index: './src/renderer/index.js'
     },
     output: {
         path: path.join(__dirname, '../app/'),
@@ -81,7 +81,8 @@ module.exports = {
         extensions: ['.js', '.json', '.vue'],
         alias: {
             '@': path.resolve(__dirname, "../src"),
-            '@config': path.resolve(__dirname, "../config")
+            '@config': path.resolve(__dirname, "../config"),
+            '@builder': path.resolve(__dirname, "../builder")
         }
     },
     plugins: [

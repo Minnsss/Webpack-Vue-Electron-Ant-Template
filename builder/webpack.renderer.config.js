@@ -6,6 +6,7 @@ Date:   2020-04-05
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const devMode = process.env.NODE_ENV === 'development';
 
 module.exports = {
@@ -94,7 +95,15 @@ module.exports = {
             hash: true,
             mode: devMode
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        // new CopyWebpackPlugin({
+        //     patterns:[
+        //         {
+        //             from: 'node_modules/sqljs/lib/sqljs.js',
+        //             to: 'static/js/',
+        //         }
+        //     ]
+        // }),
     ],
     target: 'electron-renderer'
 }

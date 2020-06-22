@@ -21,7 +21,8 @@
     "autoprefixer": "9.7.5",
     "babel-loader": "8.1.0",
     "babel-plugin-import": "1.13.0",
-    "chalk": "^4.0.0",
+    "chalk": "4.0.0",
+    "copy-webpack-plugin": "^6.0.2",
     "css-loader": "3.4.2",
     "electron": "8.1.1",
     "electron-builder": "22.4.1",
@@ -42,8 +43,11 @@
     "webpack-dev-server": "3.10.3",
     "webpack-hot-middleware": "2.25.0"
   },
+  "dependencies": {
+    "ant-design-vue": "1.5.3"
+  },
   "build": {
-    "asar": true,
+    "asar": false,
     "productName": "Electron+Vue+Webpack+Ant模板",
     "appId": "com.electron.template",
     "copyright": "Copyright © template",
@@ -90,8 +94,5 @@
       "runAfterFinish": true,
       "shortcutName": "Electron+Vue+Webpack+Ant-template"
     }
-  },
-  "dependencies": {
-    "ant-design-vue": "1.4.12"
   }
 }

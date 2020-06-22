@@ -35,6 +35,21 @@ app.on('window-all-closed', function() {
     }, 500);
 });
 
+ipcMain.on('show-dialog-sync', function (event, param) { //同步显示一个询问对话框，可将用户选项ID返回 new
+    dialog.showMessageBox(
+      {
+        buttons: param.buttons, //按钮内容数组
+        defaultId: -1,
+        type: param.dialogType, //对话框类型：question、...
+        cancelId: -1,
+        title: param.title,     //对话框标题
+        message: param.message, //展示的主要消息
+        detail: param.detail    //更多信息细节
+      }).then((index) => {
+        event.returnValue = index.response
+      })
+});
+
 // 多窗口调用例子
 // ipcMain.on('show-tool-sync', (event, args) =>  {
 //     if(args.type === "uut-tool")

@@ -1,7 +1,7 @@
 directories:
   output: pack
   buildResources: build
-asar: true
+asar: false
 productName: Electron+Vue+Webpack+Ant模板
 appId: com.electron.template
 copyright: Copyright © template

@@ -1,6 +1,0 @@
-owner: Minnsss
-repo: Webpack-Vue-Electron-Ant-Template
-provider: github
-updaterCacheDirName: builder-template-updater
-publisherName:
-  - electron
